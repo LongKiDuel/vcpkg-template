@@ -1,0 +1,37 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+    "name": "application",
+    "version": "0.0.1",
+    "dependencies": [
+        "fmt",
+        {
+            "name": "imgui",
+            "features": [
+                "opengl"
+            ],
+            "default-features": false
+        }
+    ],
+    "features": {
+        "png": {
+            "description": "Support PNG files",
+            "dependencies": [
+                "libpng"
+            ]
+        },
+        "jpeg": {
+            "description": "Support JPEG files",
+            "dependencies": [
+                "libjpeg-turbo"
+            ]
+        },
+        "tiff": {
+            "description": "Support TIFF files",
+            "dependencies": [
+                "libtiff"
+            ]
+        }
+    },
+    "$HINT":"set  VCPKG_MANIFEST_FEATURES before project() to select features",
+    "$HINT": "use VCPKG_TARGET_TRIPLET / VCPKG_HOST_TRIPLET to change triplet, VCPKG_TARGET_TRIPLET for install, VCPKG_HOST_TRIPLET for use, "
+}
